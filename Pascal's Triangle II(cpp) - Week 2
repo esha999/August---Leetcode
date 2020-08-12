@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<int> getRow(int rowIndex) {
+        
+        vector<int> res;
+        res.push_back(1);
+        if(rowIndex==0)
+            return res;
+        res.push_back(1);
+        if(rowIndex==1)
+            return res;
+        rowIndex--;
+        while(rowIndex--){
+        int a=1;
+        
+        for(int i=1;i<=res.size()-1;i++)
+        {
+            int temp=res[i];
+            res[i]=res[i]+a;
+            a=temp;
+        }
+        res.push_back(1);
+    }
+   
+    return res;
+    }
+};
